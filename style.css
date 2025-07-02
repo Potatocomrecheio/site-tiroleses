@@ -1,172 +1,109 @@
-* {
+body {
   margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-html, body {
-  height: 100%;
-  overflow: hidden;
   font-family: Arial, sans-serif;
-  background: linear-gradient(to top, #3498db 0%, #2980b9 50%, #2c3e50 100%);
-  color: white;
-  scroll-behavior: smooth;
-}
-
-section {
-  width: 100%;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
+  background: linear-gradient(135deg, #dbe9f4, #fff);
+  overflow-x: hidden;
 }
 
 .hidden {
   display: none;
 }
 
-/* Animações */
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes zoomIn {
-  from {
-    opacity: 0;
-    transform: scale(0.8);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-
 .fade-in {
-  opacity: 0;
-  animation: fadeInUp 1s forwards;
+  animation: fadeIn 1s ease-in-out;
 }
 
 .delay-1 {
-  animation-delay: 0.3s;
+  animation-delay: 0.5s;
 }
 
 .delay-2 {
-  animation-delay: 0.6s;
+  animation-delay: 1s;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 .big-title {
-  font-size: 42px;
-  margin-bottom: 10px;
+  font-size: 2.5em;
+  margin-top: 60px;
 }
 
 .description {
-  font-size: 20px;
-  margin-bottom: 30px;
-  max-width: 90%;
+  font-size: 1.2em;
 }
 
-/* Botões */
-.btn {
-  background-color: #34aadc;
-  color: white;
-  font-size: 18px;
-  padding: 14px 28px;
+.btn, .btn-back {
+  padding: 12px 24px;
   border: none;
-  border-radius: 8px;
-  text-decoration: none;
-  font-weight: bold;
+  border-radius: 12px;
+  font-size: 16px;
   cursor: pointer;
-  margin: 12px;
-  transition: all 0.4s ease;
+  transition: 0.3s ease;
+  margin: 10px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-  position: relative;
 }
 
 .btn:hover {
   transform: scale(1.05);
 }
 
-.emoji {
+.btn-back {
+  background-color: #007BFF;
+  color: white;
   position: absolute;
-  top: -14px;
-  right: -14px;
-  font-size: 20px;
-  opacity: 0;
-  transform: scale(0.5);
-  transition: all 0.3s ease;
+  top: 20px;
+  left: 20px;
 }
 
-.btn:hover .emoji {
-  opacity: 1;
-  transform: scale(1.2);
+.btn-back:hover {
+  background-color: #0056b3;
 }
 
-.btn-instagram:hover {
-  background-image: linear-gradient(45deg, #feda75, #fa7e1e, #d62976, #962fbf, #4f5bd5);
-  background-size: 200%;
-  background-position: center;
+.button-group {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.logo {
+  display: block;
+  margin: 40px auto 0;
+  max-width: 200px;
+}
+
+.welcome, .main-content {
+  text-align: center;
+  padding: 40px;
+}
+
+.btn-instagram {
+  background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
   color: white;
 }
 
-.btn-youtube:hover {
+.btn-youtube {
   background-color: #FF0000;
   color: white;
 }
 
 .btn-event {
-  color: white !important;
-}
-
-.logo {
-  max-width: 400px;
-  margin-top: 20px;
-}
-
-.button-group {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 20px;
-}
-
-/* Botão Voltar */
-.btn-back {
-  position: absolute;
-  top: 20px;
-  left: 20px;
-  background-color: #2980b9;
+  background-color: #34aadc;
   color: white;
-  padding: 12px 24px;
-  font-size: 16px;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-  border: none;
-  cursor: pointer;
-  z-index: 100;
-  transition: background 0.3s ease;
 }
 
-.btn-back:hover {
-  background-color: #1f6390;
+.emoji {
+  margin-left: 8px;
 }
 
-/* Modais */
 .overlay {
   position: fixed;
-  top: 0;
-  left: 0;
-  height: 100vh;
-  width: 100vw;
-  background-color: rgba(0,0,0,0.6);
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.6);
   display: none;
   justify-content: center;
   align-items: center;
@@ -178,19 +115,21 @@ section {
 }
 
 .modal {
-  background-color: white;
-  color: #2c3e50;
-  padding: 30px;
-  border-radius: 10px;
-  font-size: 18px;
-  font-weight: normal;
-  animation: zoomIn 0.4s ease;
   position: relative;
-  max-width: 400px;
-  text-align: center;
+  background: white;
+  padding: 30px;
+  border-radius: 16px;
+  max-width: 500px;
+  width: 90%;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+  animation: zoomIn 0.3s ease;
 }
 
-/* Botão X fora da caixa */
+@keyframes zoomIn {
+  from { transform: scale(0.8); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
 .close-btn {
   position: absolute;
   top: -10px;
@@ -216,6 +155,7 @@ section {
 }
 
 .event-img {
-  max-width: 100%;
+  width: 100%;
+  max-width: 400px;
   margin-bottom: 20px;
 }
