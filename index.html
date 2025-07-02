@@ -18,16 +18,48 @@
   <section class="main-content hidden">
     <button id="backBtn" class="btn-back fade-in">Voltar</button>
     <div class="button-group fade-in delay-1">
-      <a href="https://www.instagram.com/escolamunicipaltiroleses/" target="_blank" class="btn btn-instagram">Instagram</a>
-      <button id="aboutBtn" class="btn">Sobre</button>
-      <a href="https://www.youtube.com/@JLTVTIROLESES" target="_blank" class="btn btn-youtube">YouTube</a>
+      <a href="https://www.instagram.com/escolamunicipaltiroleses/" target="_blank" class="btn btn-instagram">
+        Instagram <span class="emoji">📷</span>
+      </a>
+      <button id="aboutBtn" class="btn">
+        Sobre <span class="emoji">❔</span>
+      </button>
+      <a href="https://www.youtube.com/@JLTVTIROLESES" target="_blank" class="btn btn-youtube">
+        YouTube <span class="emoji">📱</span>
+      </a>
+      <button id="eventBtn" class="btn btn-event">
+        Eventos <span class="emoji">🎉</span>
+      </button>
+      <button id="locationBtn" class="btn">
+        Localização <span class="emoji">🗺</span>
+      </button>
     </div>
     <img src="https://i.postimg.cc/fRYQPJ3j/SIMBOLO-ESCOLA.png" alt="Logo Escola" class="logo fade-in delay-2" />
   </section>
 
   <!-- Modal Sobre -->
   <div class="overlay" id="modalOverlay">
-    <div class="modal">TESTE</div>
+    <div class="modal">
+      TESTE
+      <span class="close-btn" onclick="closeModal()">X</span>
+    </div>
+  </div>
+
+  <!-- Modal Eventos -->
+  <div class="overlay" id="eventModal">
+    <div class="modal">
+      <img src="https://via.placeholder.com/300x200.png?text=Imagem+de+Evento" alt="Evento" class="event-img">
+      <button id="openAboutFromEvent" class="btn">Sobre</button>
+      <span class="close-btn" onclick="closeEventModal()">X</span>
+    </div>
+  </div>
+
+  <!-- Modal Localização -->
+  <div class="overlay" id="locationModal">
+    <div class="modal">
+      <p>A Escola Municipal Tiroleses está localizada na Rua Marília, nº 27, no município de Timbó, estado de Santa Catarina, com CEP 89120-000.</p>
+      <span class="close-btn" onclick="closeLocationModal()">X</span>
+    </div>
   </div>
 
   <script src="script.js"></script>
