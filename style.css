@@ -39,6 +39,17 @@ section {
   }
 }
 
+@keyframes zoomIn {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
 .fade-in {
   opacity: 0;
   animation: fadeInUp 1s forwards;
@@ -77,25 +88,35 @@ section {
   margin: 12px;
   transition: all 0.4s ease;
   box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  position: relative;
 }
 
 .btn:hover {
   transform: scale(1.05);
 }
 
-.btn-instagram {
-  background-color: #34aadc;
+/* Emojis nos botões */
+.emoji {
+  position: absolute;
+  top: -14px;
+  right: -14px;
+  font-size: 20px;
+  opacity: 0;
+  transform: scale(0.5);
+  transition: all 0.3s ease;
 }
 
+.btn:hover .emoji {
+  opacity: 1;
+  transform: scale(1.2);
+}
+
+/* Botões especiais */
 .btn-instagram:hover {
   background-image: linear-gradient(45deg, #feda75, #fa7e1e, #d62976, #962fbf, #4f5bd5);
   background-size: 200%;
   background-position: center;
   color: white;
-}
-
-.btn-youtube {
-  background-color: #34aadc;
 }
 
 .btn-youtube:hover {
@@ -134,7 +155,7 @@ section {
   animation: fadeInUp 1s forwards;
 }
 
-/* Modal */
+/* Modais */
 .overlay {
   position: fixed;
   top: 0;
@@ -157,18 +178,37 @@ section {
   color: #2c3e50;
   padding: 30px;
   border-radius: 10px;
-  font-size: 24px;
-  font-weight: bold;
+  font-size: 18px;
+  font-weight: normal;
   animation: zoomIn 0.4s ease;
+  position: relative;
+  max-width: 400px;
+  text-align: center;
 }
 
-@keyframes zoomIn {
-  from {
-    opacity: 0;
-    transform: scale(0.8);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
+.close-btn {
+  position: absolute;
+  top: -12px;
+  right: -12px;
+  background-color: red;
+  color: white;
+  border-radius: 50%;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+}
+
+.event-img {
+  max-width: 100%;
+  margin-bottom: 20px;
+}
+
+/* Botão eventos com ciclo de cores */
+.btn-event {
+  color: white !important;
 }
