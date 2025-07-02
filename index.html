@@ -37,28 +37,44 @@
     <img src="https://i.postimg.cc/fRYQPJ3j/SIMBOLO-ESCOLA.png" alt="Logo Escola" class="logo fade-in delay-2" />
   </section>
 
-  <!-- Modal Sobre -->
+  <!-- Modal Sobre (Geral) -->
   <div class="overlay" id="modalOverlay">
     <div class="modal">
-      TESTE
       <span class="close-btn" onclick="closeModal()">X</span>
+      TESTE
     </div>
   </div>
 
   <!-- Modal Eventos -->
   <div class="overlay" id="eventModal">
     <div class="modal">
+      <span class="close-btn" onclick="closeEventModal()">X</span>
       <img src="https://via.placeholder.com/300x200.png?text=Imagem+de+Evento" alt="Evento" class="event-img">
       <button id="openAboutFromEvent" class="btn">Sobre</button>
-      <span class="close-btn" onclick="closeEventModal()">X</span>
+    </div>
+  </div>
+
+  <!-- Modal Sobre do Evento (JITI) -->
+  <div class="overlay" id="eventAboutModal">
+    <div class="modal">
+      <span class="close-btn" onclick="closeEventAboutModal()">X</span>
+      <h2>JITI - Jogos Internos do Tiroleses</h2>
+      <ul style="text-align: left;">
+        <li><strong>Desafio entre turmas:</strong> interclasse anual</li>
+        <li><strong>Turmas:</strong> 6º, 7º, 8º e 9º ano</li>
+        <li><strong>Partidas:</strong> 6º x 7º, 8º x 9º</li>
+        <li><strong>Cada turma escolhe:</strong> nome, cor, mascote e grito de guerra</li>
+        <li><strong>Premiação:</strong> duas turmas vencedoras (uma por grupo)</li>
+        <li><strong>Prêmio:</strong> passeio especial</li>
+      </ul>
     </div>
   </div>
 
   <!-- Modal Localização -->
   <div class="overlay" id="locationModal">
     <div class="modal">
-      <p>A Escola Municipal Tiroleses está localizada na Rua Marília, nº 27, no município de Timbó, estado de Santa Catarina, com CEP 89120-000.</p>
       <span class="close-btn" onclick="closeLocationModal()">X</span>
+      <p>A Escola Municipal Tiroleses está localizada na Rua Marília, nº 27, no município de Timbó, estado de Santa Catarina, com CEP 89120-000.</p>
     </div>
   </div>
 
